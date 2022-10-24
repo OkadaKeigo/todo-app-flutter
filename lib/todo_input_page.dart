@@ -58,6 +58,7 @@ class _TodoInputPageState extends State<TodoInputPage> {
             CheckboxListTile(
                 title: const Text("完了"),
                 value: _isDone,
+                tileColor: _isDone ? Colors.grey : Colors.white,
                 onChanged: (bool? value) {
                   setState(() {
                     _isDone = value ?? false;
