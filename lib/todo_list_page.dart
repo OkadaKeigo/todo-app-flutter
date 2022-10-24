@@ -85,9 +85,11 @@ class _TodoListPageState extends State<TodoListPage> {
 
             /// TodoItemの描画
             child: Container(
+              height: 64,
+              alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                 color: item.isDone ? Colors.grey : Colors.white,
-                border: Border(
+                border: const Border(
                   bottom: BorderSide(color: Colors.grey),
                 ),
               ),
