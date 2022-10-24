@@ -44,6 +44,7 @@ class _TodoListPageState extends State<TodoListPage> {
       appBar: AppBar(
         title: const Text('Todo List'),
       ),
+
       /// body Todoのlist
       body: ListView.builder(
         // Todoの件数 = リストの件数
@@ -65,6 +66,7 @@ class _TodoListPageState extends State<TodoListPage> {
                     label: '編集'),
               ],
             ),
+
             /// 左へスワイプした際の処理
             endActionPane: ActionPane(
               motion: const ScrollMotion(),
@@ -80,6 +82,7 @@ class _TodoListPageState extends State<TodoListPage> {
                 ),
               ],
             ),
+
             /// TodoItemの描画
             child: Container(
               decoration: const BoxDecoration(
@@ -96,11 +99,31 @@ class _TodoListPageState extends State<TodoListPage> {
                     setState(() => _store.update(item, value!));
                   },
                 ),
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return AlertDialog(
+                        title: Text(item.title),
+                        content: Text(item.detail),
+                        actions: <Widget>[
+                          TextButton(
+                            child: Text('OK'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
               ),
             ),
           );
         },
       ),
+
       /// Todo追加ボタン
       floatingActionButton: FloatingActionButton(
         onPressed: _pushTodoInputPage,

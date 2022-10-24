@@ -48,6 +48,7 @@ class _TodoInputPageState extends State<TodoInputPage> {
       appBar: AppBar(
         title: Text(_isCreateTodo ? 'Todo追加' : 'Todo更新'),
       ),
+
       /// body
       body: Container(
         padding: const EdgeInsets.all(30),

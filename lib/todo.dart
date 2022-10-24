@@ -8,13 +8,13 @@ class Todo {
 
   /// constructor
   Todo(
-      this.id,
-      this.title,
-      this.detail,
-      this.isDone,
-      this.createDate,
-      this.updateDate,
-      );
+    this.id,
+    this.title,
+    this.detail,
+    this.isDone,
+    this.createDate,
+    this.updateDate,
+  );
 
   /// Todoモデル => Map 変換する
   Map toJson() {

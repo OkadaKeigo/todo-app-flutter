@@ -9,6 +9,7 @@ void main() {
 class TodoApp extends StatelessWidget {
   /// コンストラクタ
   const TodoApp({super.key});
+
   /// UI
   @override
   Widget build(BuildContext context) {
@@ -21,4 +22,3 @@ class TodoApp extends StatelessWidget {
     );
   }
 }
-
