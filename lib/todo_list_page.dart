@@ -40,15 +40,18 @@ class _TodoListPageState extends State<TodoListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /// appbar
       appBar: AppBar(
         title: const Text('Todo List'),
       ),
+      /// body Todoのlist
       body: ListView.builder(
         // Todoの件数 = リストの件数
         itemCount: _store.count(),
         itemBuilder: (context, index) {
           Todo item = _store.findByIndex(index);
           return Slidable(
+            /// 右へスワイプした際の処理
             startActionPane: ActionPane(
               motion: const ScrollMotion(),
               extentRatio: 0.25,
@@ -62,6 +65,7 @@ class _TodoListPageState extends State<TodoListPage> {
                     label: '編集'),
               ],
             ),
+            /// 左へスワイプした際の処理
             endActionPane: ActionPane(
               motion: const ScrollMotion(),
               extentRatio: 0.25,
@@ -76,6 +80,7 @@ class _TodoListPageState extends State<TodoListPage> {
                 ),
               ],
             ),
+            /// TodoItemの描画
             child: Container(
               decoration: const BoxDecoration(
                 border: Border(
@@ -96,6 +101,7 @@ class _TodoListPageState extends State<TodoListPage> {
           );
         },
       ),
+      /// Todo追加ボタン
       floatingActionButton: FloatingActionButton(
         onPressed: _pushTodoInputPage,
         child: const Icon(Icons.add),

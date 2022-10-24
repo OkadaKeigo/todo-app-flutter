@@ -12,10 +12,10 @@ class TodoListStore {
   List<Todo> _list = [];
 
   // Storeのインスタンス生成
-  static final TodoListStore _instance = TodoListStore._internal();
+  static final TodoListStore _instance = TodoListStore._();
 
   // Private constructor
-  TodoListStore._internal();
+  TodoListStore._();
 
   // Factory constructor
   factory TodoListStore() {

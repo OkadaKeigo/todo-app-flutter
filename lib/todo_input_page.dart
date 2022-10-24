@@ -44,13 +44,16 @@ class _TodoInputPageState extends State<TodoInputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /// appbar
       appBar: AppBar(
         title: Text(_isCreateTodo ? 'Todo追加' : 'Todo更新'),
       ),
+      /// body
       body: Container(
         padding: const EdgeInsets.all(30),
         child: Column(
           children: <Widget>[
+            /// チェックボックス
             CheckboxListTile(
                 title: const Text("完了"),
                 value: _isDone,
